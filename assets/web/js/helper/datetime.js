@@ -89,7 +89,7 @@ const handleCheckbookingDate = (slots, selectedDate, holidays) => {
   const today = getBookingDate(new Date());
   const compareDate = getBookingDate(selectedDate);
   let results = slots;
-  if (holidays.length > 0) {
+  if (holidays?.length > 0) {
     let flag = false;
     try {
       const checkHoliday = holidays.find((holiday) => {

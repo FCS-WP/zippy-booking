@@ -96,7 +96,7 @@ const BookingTimeSlot = (props) => {
     <div>
       <h4>Time Slots</h4>
       <div className="slots-container">
-        {slots.length > 0 ? (
+        {slots?.length > 0 ? (
           slots.map((slot, index) => (
             <SlotItem
               data={slot}
