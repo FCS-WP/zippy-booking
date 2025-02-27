@@ -143,8 +143,9 @@ class Zippy_Booking_Helper
 
         /* Handle holidays */
         $config_holidays = maybe_unserialize(get_option('zippy_booking_holiday_config'));
+        
         $start_date = (new DateTime($data['booking_start_date']))->format('Y-m-d');
-        if (count($config_holidays)) {
+        if ($config_holidays && count($config_holidays)) {
             $filter = array_filter($config_holidays, function ($holiday) use ($start_date) {
                 $compareDate = (new DateTime($holiday['date']))->format('Y-m-d');
                 return $compareDate === $start_date;
